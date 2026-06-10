@@ -1,6 +1,10 @@
+import { useState } from "react";
 import type { Variants } from "framer-motion";
-import { motion } from "framer-motion";
-import { Globe, LayoutDashboard, Code2, Monitor, Car, Briefcase, Wrench, Bike, MoreHorizontal, Layers, Bug } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Globe, LayoutDashboard, Code2, Monitor, Car, Briefcase, Wrench, Bike,
+  MoreHorizontal, Layers, Bug, ChevronDown, Copy, Check,
+} from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 // ─── Edit your products & environments here ───────────────────────────────────
@@ -8,9 +12,9 @@ type Environment = {
   id: number;
   name: string;
   site: { href: string; icon: LucideIcon };
-  strapi?: { href: string; label?: string }; // optional — standalone sites omit this
+  strapi?: { href: string; label?: string };
   accent: string;
-  card: string; // subtle bg + border tint for the card
+  card: string;
   badge?: string;
 };
 
@@ -127,7 +131,7 @@ const PRODUCTS: Product[] = [
   },
   {
     id: "others",
-    name: "Others",
+    name: "Standalone Sites",
     description: "Standalone Sites",
     environments: [
       {
@@ -156,11 +160,6 @@ const containerVariants: Variants = {
   visible: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } },
 };
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE } },
-};
-
 const profileVariants: Variants = {
   hidden: { opacity: 0, scale: 0.85 },
   visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: EASE } },
@@ -168,9 +167,7 @@ const profileVariants: Variants = {
 
 function Avatar({ name, avatarUrl, icon }: { name: string; avatarUrl?: string; icon?: LucideIcon }) {
   if (avatarUrl)
-    return (
-      <img src={avatarUrl} alt={name} className="w-full h-full object-cover rounded-full" />
-    );
+    return <img src={avatarUrl} alt={name} className="w-full h-full object-cover rounded-full" />;
   if (icon) {
     const Icon = icon;
     return <Icon size={28} className="text-white" strokeWidth={1.5} />;
@@ -182,32 +179,78 @@ function Avatar({ name, avatarUrl, icon }: { name: string; avatarUrl?: string; i
   );
 }
 
-function ChevronRight() {
+function LinkRow({
+  href,
+  icon,
+  accent,
+  label,
+  dimmed = false,
+}: {
+  href: string;
+  icon: LucideIcon;
+  accent?: string;
+  label: string;
+  dimmed?: boolean;
+}) {
+  const [copied, setCopied] = useState(false);
+  const Icon = icon;
+
+  const handleCopy = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText(href);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
   return (
-    <svg
-      className="w-3.5 h-3.5 text-white/30 transition-all duration-300 group-hover:text-white/60 group-hover:translate-x-0.5 flex-shrink-0"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2.5}
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-    </svg>
+    <div className="group relative flex items-center w-full border-t border-white/[0.06] bg-white/[0.02] transition-all duration-200 hover:bg-white/[0.07]">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute inset-0 focus:outline-none"
+        aria-label={label}
+      />
+      <div className="flex items-center flex-1 px-4 py-3.5 pointer-events-none min-w-0">
+        <div
+          className={`flex items-center justify-center w-8 h-8 rounded-lg flex-shrink-0 transition-transform duration-300 group-hover:scale-110 ${
+            dimmed
+              ? "bg-white/[0.06] border border-white/10"
+              : `bg-gradient-to-br ${accent} shadow-md`
+          }`}
+        >
+          <Icon size={15} className={dimmed ? "text-white/60" : "text-white"} strokeWidth={2} />
+        </div>
+        <span
+          className={`flex-1 text-center text-[13px] tracking-wide ${
+            dimmed ? "font-medium text-white/55" : "font-semibold text-white/85"
+          }`}
+        >
+          {label}
+        </span>
+      </div>
+      <button
+        onClick={handleCopy}
+        className="relative z-10 mr-3 p-1.5 rounded-md transition-all duration-200 hover:bg-white/10 flex-shrink-0"
+        title="Copy URL"
+      >
+        {copied
+          ? <Check size={13} className="text-emerald-400" />
+          : <Copy size={13} className="text-white/40" />}
+      </button>
+    </div>
   );
 }
 
 function EnvCard({ env }: { env: Environment }) {
-  const SiteIcon = env.site.icon;
   const isStandalone = !env.strapi;
 
   return (
     <div className={`w-full rounded-2xl overflow-hidden border backdrop-blur-md ${env.card}`}>
-      {/* Env label row */}
       <div className="flex items-center gap-2 px-4 pt-3 pb-2">
         <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-br ${env.accent}`} />
-        <span className="text-[13px] font-bold tracking-wide text-white/75">
-          {env.name}
-        </span>
+        <span className="text-[13px] font-bold tracking-wide text-white/75">{env.name}</span>
         {env.badge && (
           <span className="ml-auto text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/20">
             {env.badge}
@@ -215,42 +258,24 @@ function EnvCard({ env }: { env: Environment }) {
         )}
       </div>
 
-      {/* Website row */}
-      <a
+      <LinkRow
         href={env.site.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative flex items-center w-full px-4 py-3.5 border-t border-white/[0.06] bg-white/[0.02] transition-all duration-200 hover:bg-white/[0.07] focus:outline-none cursor-pointer no-underline"
-      >
-        <div className={`flex items-center justify-center w-8 h-8 rounded-lg flex-shrink-0 bg-gradient-to-br ${env.accent} shadow-md transition-transform duration-300 group-hover:scale-110`}>
-          <SiteIcon size={15} className="text-white" strokeWidth={2} />
-        </div>
-        <span className="absolute inset-0 flex items-center justify-center text-[13px] font-semibold text-white/85 tracking-wide pointer-events-none">
-          {isStandalone ? env.name : "Website"}
-        </span>
-        <ChevronRight />
-      </a>
+        icon={env.site.icon}
+        accent={env.accent}
+        label={isStandalone ? env.name : "Website"}
+      />
 
-      {/* Strapi row — only for paired environments */}
       {env.strapi && (
         <>
           <div className="flex items-center px-4">
             <div className="w-px h-3 bg-white/10 ml-[15px]" />
           </div>
-          <a
+          <LinkRow
             href={env.strapi.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative flex items-center w-full px-4 py-3.5 border-t border-white/[0.06] bg-white/[0.02] transition-all duration-200 hover:bg-white/[0.07] focus:outline-none cursor-pointer no-underline"
-          >
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg flex-shrink-0 bg-white/[0.06] border border-white/10 transition-transform duration-300 group-hover:scale-110">
-              <LayoutDashboard size={15} className="text-white/60" strokeWidth={2} />
-            </div>
-            <span className="absolute inset-0 flex items-center justify-center text-[13px] font-medium text-white/55 tracking-wide pointer-events-none">
-              {env.strapi?.label ?? "Strapi"}
-            </span>
-            <ChevronRight />
-          </a>
+            icon={LayoutDashboard}
+            label={env.strapi.label ?? "Strapi"}
+            dimmed
+          />
         </>
       )}
 
@@ -260,6 +285,7 @@ function EnvCard({ env }: { env: Environment }) {
 }
 
 function ProductSection({ product, delay }: { product: Product; delay: number }) {
+  const [isOpen, setIsOpen] = useState(true);
   const isRental = product.id === "rental";
   const isMetro = product.id === "metro";
   const isOthers = product.id === "others";
@@ -282,10 +308,10 @@ function ProductSection({ product, delay }: { product: Product; delay: number })
       animate="visible"
       custom={delay}
     >
-      {/* Product header */}
-      <motion.div
-        className="flex flex-col items-center gap-4 text-center"
+      <motion.button
+        className="flex flex-col items-center gap-3 text-center w-full focus:outline-none"
         variants={profileVariants}
+        onClick={() => setIsOpen((o) => !o)}
       >
         <div className="relative">
           <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${gradientFrom} blur-md opacity-70 scale-110`} />
@@ -303,16 +329,30 @@ function ProductSection({ product, delay }: { product: Product; delay: number })
           <h2 className="text-xl font-bold text-white tracking-tight">{product.name}</h2>
           <p className="text-sm text-white/50">{product.description}</p>
         </div>
-      </motion.div>
+        <ChevronDown
+          size={14}
+          className={`text-white/30 transition-transform duration-300 ${isOpen ? "rotate-0" : "-rotate-90"}`}
+        />
+      </motion.button>
 
-      {/* Environment cards */}
-      <div className="w-full flex flex-col gap-3">
-        {product.environments.map((env) => (
-          <motion.div key={env.id} variants={itemVariants}>
-            <EnvCard env={env} />
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            key="body"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: EASE }}
+            className="overflow-hidden"
+          >
+            <div className="flex flex-col gap-3">
+              {product.environments.map((env) => (
+                <EnvCard key={env.id} env={env} />
+              ))}
+            </div>
           </motion.div>
-        ))}
-      </div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }
@@ -327,15 +367,20 @@ export default function App() {
         <div className="absolute -bottom-40 left-1/3 w-[400px] h-[400px] rounded-full bg-rose-700/15 blur-[100px]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-5xl flex flex-col gap-8 pb-8">
-        {/* Two sections per row */}
+      <div className="relative z-10 w-full max-w-5xl flex flex-col gap-10 pb-8">
+        {/* Page header */}
+        <div className="text-center pt-2">
+          <h1 className="text-3xl font-bold text-white tracking-tight">Freesbe Internal</h1>
+          <p className="text-sm text-white/40 mt-2">Dev links & admin access</p>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-start">
           {PRODUCTS.map((product, i) => (
             <ProductSection key={product.id} product={product} delay={i * 0.15} />
           ))}
         </div>
 
-        <p className="text-xs text-white/20 text-center mt-2">
+        <p className="text-xs text-white/20 text-center">
           © {new Date().getFullYear()} Freesbe
         </p>
       </div>
