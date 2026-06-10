@@ -1,6 +1,6 @@
 import type { Variants } from "framer-motion";
 import { motion } from "framer-motion";
-import { Globe, LayoutDashboard, Code2, Monitor, Car, Briefcase, Wrench, Bike } from "lucide-react";
+import { Globe, LayoutDashboard, Code2, Monitor, Car, Briefcase, Wrench, Bike, MoreHorizontal, Layers, Bug } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 // ─── Edit your products & environments here ───────────────────────────────────
@@ -61,20 +61,6 @@ const PRODUCTS: Product[] = [
         accent: "from-violet-500 to-purple-500",
         card: "bg-violet-500/[0.07] border-violet-500/25",
       },
-      {
-        id: 5,
-        name: "Careers",
-        site: { href: "https://careers.freesbe.com/", icon: Briefcase },
-        accent: "from-pink-500 to-rose-500",
-        card: "bg-pink-500/[0.07] border-pink-500/25",
-      },
-      {
-        id: 6,
-        name: "Service",
-        site: { href: "https://service.freesbe.com/", icon: Wrench },
-        accent: "from-cyan-500 to-sky-500",
-        card: "bg-cyan-500/[0.07] border-cyan-500/25",
-      },
     ],
   },
   {
@@ -122,6 +108,41 @@ const PRODUCTS: Product[] = [
         accent: "from-emerald-500 to-teal-500",
         card: "bg-emerald-500/[0.07] border-emerald-500/25",
         badge: "Live",
+      },
+    ],
+  },
+  {
+    id: "thirdparty",
+    name: "3rd Party",
+    description: "External Tools & Services",
+    environments: [
+      {
+        id: 1,
+        name: "Sentry",
+        site: { href: "https://freesbe.sentry.io/projects/", icon: Bug },
+        accent: "from-violet-500 to-fuchsia-500",
+        card: "bg-violet-500/[0.07] border-violet-500/25",
+      },
+    ],
+  },
+  {
+    id: "others",
+    name: "Others",
+    description: "Standalone Sites",
+    environments: [
+      {
+        id: 1,
+        name: "Careers",
+        site: { href: "https://careers.freesbe.com/", icon: Briefcase },
+        accent: "from-pink-500 to-rose-500",
+        card: "bg-pink-500/[0.07] border-pink-500/25",
+      },
+      {
+        id: 2,
+        name: "Service",
+        site: { href: "https://service.freesbe.com/", icon: Wrench },
+        accent: "from-cyan-500 to-sky-500",
+        card: "bg-cyan-500/[0.07] border-cyan-500/25",
       },
     ],
   },
@@ -241,10 +262,16 @@ function EnvCard({ env }: { env: Environment }) {
 function ProductSection({ product, delay }: { product: Product; delay: number }) {
   const isRental = product.id === "rental";
   const isMetro = product.id === "metro";
+  const isOthers = product.id === "others";
+  const isThirdParty = product.id === "thirdparty";
   const gradientFrom = isRental
     ? "from-rose-500 via-orange-500 to-amber-500"
     : isMetro
     ? "from-blue-500 via-cyan-500 to-teal-500"
+    : isOthers
+    ? "from-slate-500 via-gray-500 to-zinc-500"
+    : isThirdParty
+    ? "from-violet-500 via-fuchsia-500 to-purple-500"
     : "from-purple-500 via-pink-500 to-indigo-500";
 
   return (
@@ -267,7 +294,7 @@ function ProductSection({ product, delay }: { product: Product; delay: number })
               <Avatar
                 name={product.name}
                 avatarUrl={product.avatarUrl}
-                icon={isRental ? Car : isMetro ? Bike : undefined}
+                icon={isRental ? Car : isMetro ? Bike : isOthers ? MoreHorizontal : isThirdParty ? Layers : undefined}
               />
             </div>
           </div>
