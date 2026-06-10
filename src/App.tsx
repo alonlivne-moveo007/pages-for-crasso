@@ -3,7 +3,7 @@ import type { Variants } from "framer-motion";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Globe, LayoutDashboard, Code2, Monitor, Car, Briefcase, Wrench, Bike,
-  MoreHorizontal, Layers, Bug, ChevronDown, Copy, Check,
+  MoreHorizontal, Layers, Bug, ChevronDown, Copy, Check, BarChart2, Tag,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -126,6 +126,20 @@ const PRODUCTS: Product[] = [
         site: { href: "https://freesbe.sentry.io/projects/", icon: Bug },
         accent: "from-violet-500 to-fuchsia-500",
         card: "bg-violet-500/[0.07] border-violet-500/25",
+      },
+      {
+        id: 2,
+        name: "PostHog",
+        site: { href: "https://us.posthog.com/project/52571/home", icon: BarChart2 },
+        accent: "from-orange-500 to-amber-500",
+        card: "bg-orange-500/[0.07] border-orange-500/25",
+      },
+      {
+        id: 3,
+        name: "Tag Manager",
+        site: { href: "https://tagmanager.google.com/#/container/accounts/6065230515/containers/98228637/workspaces/657", icon: Tag },
+        accent: "from-blue-500 to-cyan-500",
+        card: "bg-blue-500/[0.07] border-blue-500/25",
       },
     ],
   },
