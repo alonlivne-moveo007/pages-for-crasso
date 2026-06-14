@@ -1,5 +1,5 @@
 import {
-  Globe, Code2, Car, Bike, Layers, MoreHorizontal,
+  Globe, Code2, Car, Bike, Layers, AppWindow,
   Briefcase, Wrench, Bug, BarChart2, Tag,
 } from "lucide-react";
 import type { Product } from "../types";
@@ -93,7 +93,7 @@ export const PRODUCTS: Product[] = [
     id: "others",
     name: "Standalone Sites",
     gradient: "from-slate-500 via-gray-500 to-zinc-500",
-    icon: MoreHorizontal,
+    icon: AppWindow,
     environments: [
       {
         id: 1,

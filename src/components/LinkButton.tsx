@@ -4,8 +4,8 @@ import type { LucideIcon } from "lucide-react";
 import type { LinkVariant } from "../types";
 
 const VARIANT_STYLES: Record<LinkVariant, string> = {
-  green: "bg-emerald-500/10 border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/20",
-  purple: "bg-violet-500/10 border-violet-500/30 text-violet-300 hover:bg-violet-500/20",
+  green: "bg-emerald-500/10 border-emerald-500/30 text-white hover:bg-emerald-500/20",
+  purple: "bg-violet-500/10 border-violet-500/30 text-white hover:bg-violet-500/20",
 };
 
 export function LinkButton({
