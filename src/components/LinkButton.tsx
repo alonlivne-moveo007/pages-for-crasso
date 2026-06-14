@@ -34,7 +34,7 @@ export function LinkButton({
 
   return (
     <div
-      className={`group/btn relative flex items-center justify-between gap-3 justify-self-start min-w-[160px] px-3.5 py-2.5 rounded-lg border text-[13px] font-medium transition-colors ${VARIANT_STYLES[variant]} ${className}`}
+      className={`group/btn relative flex items-center justify-between gap-3 w-full px-3.5 py-2.5 rounded-lg border text-[13px] font-medium transition-colors ${VARIANT_STYLES[variant]} ${className}`}
     >
       <a
         href={href}

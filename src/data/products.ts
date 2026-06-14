@@ -91,7 +91,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "thirdparty",
-    name: "3rd Party",
+    name: "Global Tools",
     gradient: "from-violet-500 via-fuchsia-500 to-purple-500",
     icon: Layers,
     environments: [
