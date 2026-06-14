@@ -34,6 +34,7 @@ export function EnvRow({ env }: { env: Environment }) {
         <LinkButton
           href={env.strapi.href}
           icon={Code2}
+          iconUrl="https://cdn.simpleicons.org/strapi"
           label={env.strapi.label ?? `Strapi – ${env.name}`}
           variant="purple"
           className={single ? "col-span-2" : ""}
@@ -44,6 +45,7 @@ export function EnvRow({ env }: { env: Environment }) {
         <LinkButton
           href={env.figma.href}
           icon={PenTool}
+          iconUrl="https://cdn.simpleicons.org/figma"
           label={env.figma.label ?? "Figma"}
           variant="figma"
           className={single ? "col-span-2" : ""}
