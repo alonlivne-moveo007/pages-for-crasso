@@ -1,6 +1,6 @@
 import {
-  Globe, Code2, Car, Bike, Layers, AppWindow, Smartphone, LifeBuoy,
-  Briefcase, Wrench, Bug, BarChart2, Tag, ShoppingBag, Image, Eye,
+  Globe, Code2, Car, Bike, Layers, Smartphone, LifeBuoy,
+  Briefcase, Wrench, Bug, BarChart2, Tag, ShoppingBag, Image, Eye, Cloud,
 } from "lucide-react";
 import type { Product } from "../types";
 
@@ -99,22 +99,46 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
-    id: "others",
-    name: "Standalone Sites",
-    gradient: "from-slate-500 via-gray-500 to-zinc-500",
-    icon: AppWindow,
+    id: "service",
+    name: "Service",
+    gradient: "from-cyan-500 via-sky-500 to-blue-500",
+    icon: Wrench,
     environments: [
       {
         id: 1,
-        name: "Service",
-        site: { href: "https://service.freesbe.com/", icon: Wrench },
-        accent: "from-cyan-500 to-sky-500",
+        name: "Prod",
+        site: { href: "https://service.freesbe.com/", icon: Globe },
+        accent: "from-emerald-500 to-teal-500",
       },
       {
         id: 2,
-        name: "Accessories New",
-        site: { href: "https://accessories-new.freesbe.com/", icon: ShoppingBag },
-        accent: "from-purple-500 to-fuchsia-500",
+        name: "Stage",
+        site: { href: "https://stage-service.freesbe.com/", icon: Code2 },
+        accent: "from-amber-500 to-orange-500",
+      },
+      {
+        id: 3,
+        name: "Dev",
+        site: { href: "https://dev-service.freesbe.com/", icon: Code2 },
+        accent: "from-sky-500 to-indigo-500",
+      },
+      {
+        id: 4,
+        name: "Renault – Prod",
+        site: { href: "https://service.freesbe.com/?tem=renault", icon: Globe },
+        accent: "from-emerald-500 to-teal-500",
+      },
+      {
+        id: 5,
+        name: "Renault – Stage",
+        site: { href: "https://stage-service.freesbe.com/?tem=renault", icon: Code2 },
+        accent: "from-amber-500 to-orange-500",
+      },
+      {
+        id: 6,
+        name: "Renault – Dev",
+        site: { href: "https://dev-service.freesbe.com/?tem=renault", icon: Code2 },
+        accent: "from-sky-500 to-indigo-500",
       },
     ],
   },
@@ -158,15 +182,21 @@ export const PRODUCTS: Product[] = [
     environments: [
       {
         id: 1,
-        name: "Production",
+        name: "Used Cars – Prod",
         site: { href: "https://accessories.freesbe.com/", icon: ShoppingBag },
         accent: "from-emerald-500 to-teal-500",
       },
       {
         id: 2,
-        name: "Dev",
+        name: "Used Cars – Dev",
         site: { href: "https://accessories-dev.freesbe.com/", icon: Code2 },
         accent: "from-sky-500 to-indigo-500",
+      },
+      {
+        id: 3,
+        name: "New Cars – Prod",
+        site: { href: "https://accessories-new.freesbe.com/", icon: ShoppingBag },
+        accent: "from-purple-500 to-fuchsia-500",
       },
     ],
   },
@@ -260,6 +290,12 @@ export const PRODUCTS: Product[] = [
         name: "Clarity",
         site: { href: "https://clarity.microsoft.com/", icon: Eye },
         accent: "from-sky-500 to-blue-500",
+      },
+      {
+        id: 6,
+        name: "Salesforce",
+        site: { href: "https://carasso.my.salesforce.com", icon: Cloud },
+        accent: "from-blue-500 to-sky-500",
       },
     ],
   },
