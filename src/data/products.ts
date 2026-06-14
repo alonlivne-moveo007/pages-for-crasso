@@ -1,5 +1,5 @@
 import {
-  Globe, Code2, Car, Bike, Layers, Smartphone, LifeBuoy,
+  Globe, Code2, Car, Bike, Layers, Smartphone,
   Briefcase, Wrench, Bug, BarChart2, Tag, ShoppingBag, Image, Eye, Cloud,
 } from "lucide-react";
 import type { Product } from "../types";
@@ -245,7 +245,7 @@ export const PRODUCTS: Product[] = [
       {
         id: 1,
         name: "Production",
-        site: { href: "https://app-support.freesbe.com/", icon: LifeBuoy },
+        site: { href: "https://app-support.freesbe.com/", icon: Globe },
         strapi: { href: "https://app.freesbe.com/admin" },
         accent: "from-emerald-500 to-teal-500",
       },
