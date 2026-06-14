@@ -107,6 +107,12 @@ export const PRODUCTS: Product[] = [
         site: { href: "https://service.freesbe.com/", icon: Wrench },
         accent: "from-cyan-500 to-sky-500",
       },
+      {
+        id: 3,
+        name: "Car Fleet",
+        site: { href: "https://freesbe.com/car-fleet", icon: Car },
+        accent: "from-indigo-500 to-blue-500",
+      },
     ],
   },
   {
