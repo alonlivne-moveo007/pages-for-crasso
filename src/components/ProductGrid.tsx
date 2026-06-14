@@ -6,7 +6,7 @@ import { ProductCard } from "./ProductCard";
 export function ProductGrid() {
   return (
     <motion.div
-      className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start"
+      className="columns-1 lg:columns-2 gap-8"
       variants={containerVariants}
       initial="hidden"
       animate="visible"

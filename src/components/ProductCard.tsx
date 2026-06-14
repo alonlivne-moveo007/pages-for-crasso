@@ -11,7 +11,7 @@ export function ProductCard({ product }: { product: Product }) {
   const SymbolIcon = product.icon;
 
   return (
-    <motion.div className="relative w-full" variants={cardVariants}>
+    <motion.div className="relative w-full mb-8 break-inside-avoid" variants={cardVariants}>
       {/* Card glow halo */}
       <div className={`${CARD_GLOW} ${product.gradient}`} />
 
