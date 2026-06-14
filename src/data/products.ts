@@ -1,6 +1,6 @@
 import {
   Globe, Code2, Car, Bike, Layers, AppWindow, Smartphone, LifeBuoy,
-  Briefcase, Wrench, Bug, BarChart2, Tag,
+  Briefcase, Wrench, Bug, BarChart2, Tag, ShoppingBag,
 } from "lucide-react";
 import type { Product } from "../types";
 
@@ -112,6 +112,18 @@ export const PRODUCTS: Product[] = [
         name: "Car Fleet",
         site: { href: "https://freesbe.com/car-fleet", icon: Car },
         accent: "from-indigo-500 to-blue-500",
+      },
+      {
+        id: 4,
+        name: "Accessories",
+        site: { href: "https://accessories.freesbe.com/", icon: ShoppingBag },
+        accent: "from-fuchsia-500 to-pink-500",
+      },
+      {
+        id: 5,
+        name: "Accessories New",
+        site: { href: "https://accessories-new.freesbe.com/", icon: ShoppingBag },
+        accent: "from-purple-500 to-fuchsia-500",
       },
     ],
   },
