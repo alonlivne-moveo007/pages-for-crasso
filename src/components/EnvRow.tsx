@@ -23,7 +23,7 @@ export function EnvRow({ env }: { env: Environment }) {
         <LinkButton
           href={env.site.href}
           icon={env.site.icon}
-          label={single ? env.name : "Website"}
+          label={`Website – ${env.name}`}
           variant="green"
           className={single ? "col-span-2" : ""}
         />
@@ -33,7 +33,7 @@ export function EnvRow({ env }: { env: Environment }) {
         <LinkButton
           href={env.strapi.href}
           icon={Code2}
-          label={env.strapi.label ?? "Strapi"}
+          label={env.strapi.label ?? `Strapi – ${env.name}`}
           variant="purple"
           className={single ? "col-span-2" : ""}
         />
