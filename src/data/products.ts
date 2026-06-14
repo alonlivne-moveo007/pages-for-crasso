@@ -1,5 +1,5 @@
 import {
-  Globe, Code2, Monitor, Car, Bike, Layers, MoreHorizontal,
+  Globe, Code2, Car, Bike, Layers, MoreHorizontal,
   Briefcase, Wrench, Bug, BarChart2, Tag,
 } from "lucide-react";
 import type { Product } from "../types";
@@ -23,7 +23,7 @@ export const PRODUCTS: Product[] = [
       {
         id: 2,
         name: "Stage",
-        site: { href: "https://stage.freesbe.com/", icon: Monitor },
+        site: { href: "https://stage.freesbe.com/", icon: Code2 },
         strapi: { href: "https://stage.freesbe.com/api/admin/" },
         accent: "from-amber-500 to-orange-500",
       },
@@ -60,7 +60,7 @@ export const PRODUCTS: Product[] = [
       {
         id: 2,
         name: "Stage",
-        site: { href: "https://stage-rental.freesbe.com/", icon: Monitor },
+        site: { href: "https://stage-rental.freesbe.com/", icon: Code2 },
         strapi: { href: "https://stage-rental.freesbe.com/api/admin/" },
         accent: "from-amber-500 to-orange-500",
       },

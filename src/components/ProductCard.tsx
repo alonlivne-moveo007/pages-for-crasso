@@ -20,7 +20,7 @@ export function ProductCard({ product }: { product: Product }) {
         {/* Header */}
         <button
           onClick={() => setIsOpen((o) => !o)}
-          className="flex items-center justify-between w-full px-card pt-6 pb-4 text-left focus:outline-none"
+          className="flex items-center justify-between w-full px-card py-3 text-left focus:outline-none"
         >
           <div className="flex items-center gap-3 min-w-0">
             <div className={`flex items-center justify-center w-11 h-11 rounded-xl flex-shrink-0 bg-gradient-to-br ${product.gradient} shadow-md`}>
