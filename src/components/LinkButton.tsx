@@ -12,12 +12,14 @@ const VARIANT_STYLES: Record<LinkVariant, string> = {
 export function LinkButton({
   href,
   icon,
+  iconUrl,
   label,
   variant,
   className = "",
 }: {
   href: string;
   icon: LucideIcon;
+  iconUrl?: string;
   label: string;
   variant: LinkVariant;
   className?: string;
@@ -46,7 +48,11 @@ export function LinkButton({
         className="absolute inset-0 rounded-lg focus:outline-none"
       />
       <span className="flex items-center gap-2 min-w-0 pointer-events-none">
-        <Icon size={14} strokeWidth={2} className="flex-shrink-0" />
+        {iconUrl ? (
+          <img src={iconUrl} alt="" width={14} height={14} className="flex-shrink-0 rounded-sm" />
+        ) : (
+          <Icon size={14} strokeWidth={2} className="flex-shrink-0" />
+        )}
         <span className="truncate">{label}</span>
       </span>
       <button

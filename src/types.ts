@@ -5,7 +5,7 @@ export type LinkVariant = "green" | "purple" | "figma";
 export type Environment = {
   id: number;
   name: string;
-  site?: { href: string; icon: LucideIcon };
+  site?: { href: string; icon: LucideIcon; iconUrl?: string };
   strapi?: { href: string; label?: string };
   figma?: { href: string; label?: string };
   /** Tailwind gradient for the status dot, e.g. "from-emerald-500 to-teal-500" */

@@ -23,6 +23,7 @@ export function EnvRow({ env }: { env: Environment }) {
         <LinkButton
           href={env.site.href}
           icon={env.site.icon}
+          iconUrl={env.site.iconUrl}
           label={`Website – ${env.name}`}
           variant="green"
           className={single ? "col-span-2" : ""}
