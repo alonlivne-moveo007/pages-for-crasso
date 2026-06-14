@@ -1,6 +1,6 @@
 import {
   Globe, Code2, Car, Bike, Layers, AppWindow, Smartphone, LifeBuoy,
-  Briefcase, Wrench, Bug, BarChart2, Tag, ShoppingBag,
+  Briefcase, Wrench, Bug, BarChart2, Tag, ShoppingBag, Image, Eye,
 } from "lucide-react";
 import type { Product } from "../types";
 
@@ -177,6 +177,18 @@ export const PRODUCTS: Product[] = [
         name: "Tag Manager",
         site: { href: "https://tagmanager.google.com/#/container/accounts/6065230515/containers/98228637/workspaces/657", icon: Tag },
         accent: "from-blue-500 to-cyan-500",
+      },
+      {
+        id: 4,
+        name: "ImageKit",
+        site: { href: "https://imagekit.io/login/", icon: Image },
+        accent: "from-rose-500 to-pink-500",
+      },
+      {
+        id: 5,
+        name: "Clarity",
+        site: { href: "https://clarity.microsoft.com/", icon: Eye },
+        accent: "from-sky-500 to-blue-500",
       },
     ],
   },
