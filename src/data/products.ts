@@ -90,6 +90,26 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
+    id: "others",
+    name: "Standalone Sites",
+    gradient: "from-slate-500 via-gray-500 to-zinc-500",
+    icon: MoreHorizontal,
+    environments: [
+      {
+        id: 1,
+        name: "Careers",
+        site: { href: "https://careers.freesbe.com/", icon: Briefcase },
+        accent: "from-pink-500 to-rose-500",
+      },
+      {
+        id: 2,
+        name: "Service",
+        site: { href: "https://service.freesbe.com/", icon: Wrench },
+        accent: "from-cyan-500 to-sky-500",
+      },
+    ],
+  },
+  {
     id: "thirdparty",
     name: "Global Tools",
     gradient: "from-violet-500 via-fuchsia-500 to-purple-500",
@@ -112,26 +132,6 @@ export const PRODUCTS: Product[] = [
         name: "Tag Manager",
         site: { href: "https://tagmanager.google.com/#/container/accounts/6065230515/containers/98228637/workspaces/657", icon: Tag },
         accent: "from-blue-500 to-cyan-500",
-      },
-    ],
-  },
-  {
-    id: "others",
-    name: "Standalone Sites",
-    gradient: "from-slate-500 via-gray-500 to-zinc-500",
-    icon: MoreHorizontal,
-    environments: [
-      {
-        id: 1,
-        name: "Careers",
-        site: { href: "https://careers.freesbe.com/", icon: Briefcase },
-        accent: "from-pink-500 to-rose-500",
-      },
-      {
-        id: 2,
-        name: "Service",
-        site: { href: "https://service.freesbe.com/", icon: Wrench },
-        accent: "from-cyan-500 to-sky-500",
       },
     ],
   },
