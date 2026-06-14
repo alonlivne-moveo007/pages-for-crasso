@@ -40,6 +40,12 @@ export const PRODUCTS: Product[] = [
         strapi: { href: "https://dev3.freesbe.com/api/admin/" },
         accent: "from-violet-500 to-purple-500",
       },
+      {
+        id: 5,
+        name: "Figma",
+        figma: { href: "https://www.figma.com/design/JiDVQ5zJKCHWBaSKeaEmP6/Car-pages" },
+        accent: "from-amber-500 to-orange-500",
+      },
     ],
   },
   {
