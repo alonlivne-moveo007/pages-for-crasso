@@ -3,6 +3,13 @@ import {
   Briefcase, Wrench, Bug, BarChart2, Tag, ShoppingBag, Image, Eye, Cloud,
 } from "lucide-react";
 import type { Product } from "../types";
+import freesbeLogo from "../assets/freesbe.svg";
+import sentryLogo from "../assets/sentry.svg";
+import posthogLogo from "../assets/posthog.svg";
+import tagManagerLogo from "../assets/googletagmanager.svg";
+import imagekitLogo from "../assets/imagekit.png";
+import clarityLogo from "../assets/clarity.png";
+import salesforceLogo from "../assets/salesforce.png";
 
 // ─── Edit your products & environments here ───────────────────────────────────
 export const PRODUCTS: Product[] = [
@@ -11,6 +18,7 @@ export const PRODUCTS: Product[] = [
     name: "Freesbe",
     gradient: "from-purple-500 via-pink-500 to-indigo-500",
     icon: Globe,
+    iconUrl: freesbeLogo,
     environments: [
       {
         id: 1,
@@ -264,37 +272,37 @@ export const PRODUCTS: Product[] = [
       {
         id: 1,
         name: "Sentry",
-        site: { href: "https://freesbe.sentry.io/projects/", icon: Bug, iconUrl: "https://cdn.simpleicons.org/sentry" },
+        site: { href: "https://freesbe.sentry.io/projects/", icon: Bug, iconUrl: sentryLogo },
         accent: "from-violet-500 to-fuchsia-500",
       },
       {
         id: 2,
         name: "PostHog",
-        site: { href: "https://us.posthog.com/project/52571/home", icon: BarChart2, iconUrl: "https://cdn.simpleicons.org/posthog" },
+        site: { href: "https://us.posthog.com/project/52571/home", icon: BarChart2, iconUrl: posthogLogo },
         accent: "from-orange-500 to-amber-500",
       },
       {
         id: 3,
         name: "Tag Manager",
-        site: { href: "https://tagmanager.google.com/#/container/accounts/6065230515/containers/98228637/workspaces/657", icon: Tag, iconUrl: "https://cdn.simpleicons.org/googletagmanager" },
+        site: { href: "https://tagmanager.google.com/#/container/accounts/6065230515/containers/98228637/workspaces/657", icon: Tag, iconUrl: tagManagerLogo },
         accent: "from-blue-500 to-cyan-500",
       },
       {
         id: 4,
         name: "ImageKit",
-        site: { href: "https://imagekit.io/login/", icon: Image, iconUrl: "https://www.google.com/s2/favicons?domain=imagekit.io&sz=64" },
+        site: { href: "https://imagekit.io/login/", icon: Image, iconUrl: imagekitLogo },
         accent: "from-rose-500 to-pink-500",
       },
       {
         id: 5,
         name: "Clarity",
-        site: { href: "https://clarity.microsoft.com/", icon: Eye, iconUrl: "https://www.google.com/s2/favicons?domain=clarity.microsoft.com&sz=64" },
+        site: { href: "https://clarity.microsoft.com/", icon: Eye, iconUrl: clarityLogo },
         accent: "from-sky-500 to-blue-500",
       },
       {
         id: 6,
         name: "Salesforce",
-        site: { href: "https://carasso.my.salesforce.com", icon: Cloud, iconUrl: "https://www.google.com/s2/favicons?domain=salesforce.com&sz=64" },
+        site: { href: "https://carasso.my.salesforce.com", icon: Cloud, iconUrl: salesforceLogo },
         accent: "from-blue-500 to-sky-500",
       },
     ],

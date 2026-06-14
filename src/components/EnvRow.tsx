@@ -1,6 +1,8 @@
 import { Code2, PenTool } from "lucide-react";
 import type { Environment } from "../types";
 import { LinkButton } from "./LinkButton";
+import strapiLogo from "../assets/strapi.svg";
+import figmaLogo from "../assets/figma.svg";
 
 export function EnvRow({ env }: { env: Environment }) {
   // A row with only one link lets that button span both columns.
@@ -34,7 +36,7 @@ export function EnvRow({ env }: { env: Environment }) {
         <LinkButton
           href={env.strapi.href}
           icon={Code2}
-          iconUrl="https://cdn.simpleicons.org/strapi"
+          iconUrl={strapiLogo}
           label={env.strapi.label ?? `Strapi – ${env.name}`}
           variant="purple"
           className={single ? "col-span-2" : ""}
@@ -45,7 +47,7 @@ export function EnvRow({ env }: { env: Environment }) {
         <LinkButton
           href={env.figma.href}
           icon={PenTool}
-          iconUrl="https://cdn.simpleicons.org/figma"
+          iconUrl={figmaLogo}
           label={env.figma.label ?? "Figma"}
           variant="figma"
           className={single ? "col-span-2" : ""}

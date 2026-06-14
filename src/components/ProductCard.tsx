@@ -23,9 +23,17 @@ export function ProductCard({ product }: { product: Product }) {
           className="flex items-center justify-between w-full px-card py-3 text-left focus:outline-none"
         >
           <div className="flex items-center gap-3 min-w-0">
-            <div className={`flex items-center justify-center w-11 h-11 rounded-xl flex-shrink-0 bg-gradient-to-br ${product.gradient} shadow-md`}>
-              <SymbolIcon size={22} className="text-white" strokeWidth={2} />
-            </div>
+            {product.iconUrl ? (
+              <img
+                src={product.iconUrl}
+                alt=""
+                className="w-11 h-11 rounded-xl flex-shrink-0 shadow-md"
+              />
+            ) : (
+              <div className={`flex items-center justify-center w-11 h-11 rounded-xl flex-shrink-0 bg-gradient-to-br ${product.gradient} shadow-md`}>
+                <SymbolIcon size={22} className="text-white" strokeWidth={2} />
+              </div>
+            )}
             <h2 className="text-xl font-bold text-white tracking-tight truncate">{product.name}</h2>
           </div>
           <ChevronDown

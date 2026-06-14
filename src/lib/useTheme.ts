@@ -3,9 +3,9 @@ import { useCallback, useEffect, useState } from "react";
 export type Theme = "light" | "dark";
 
 function readTheme(): Theme {
-  if (typeof document === "undefined") return "dark";
+  if (typeof document === "undefined") return "light";
   const t = document.documentElement.dataset.theme;
-  return t === "light" ? "light" : "dark";
+  return t === "dark" ? "dark" : "light";
 }
 
 export function useTheme() {

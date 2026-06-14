@@ -10,14 +10,14 @@
       (function () {
         try {
           var t = localStorage.getItem("theme");
-          if (!t) t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+          if (!t) t = "light";
           document.documentElement.dataset.theme = t;
         } catch (_) {
-          document.documentElement.dataset.theme = "dark";
+          document.documentElement.dataset.theme = "light";
         }
       })();
     </script>
-    <title>Freesbe Internal</title>
+    <title>Freesbe Internal Links</title>
   </head>
   <body>
     <div id="root"></div>

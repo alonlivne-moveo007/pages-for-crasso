@@ -20,5 +20,7 @@ export type Product = {
   gradient: string;
   /** Symbol shown in the card header */
   icon: LucideIcon;
+  /** Optional logo image URL; when set, replaces the gradient tile + lucide icon */
+  iconUrl?: string;
   environments: Environment[];
 };
