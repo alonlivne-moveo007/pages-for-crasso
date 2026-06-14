@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import type { Product } from "../types";
 import { EASE, cardVariants } from "../lib/animations";
+import { CARD_SURFACE, CARD_GLOW } from "../lib/styles";
 import { EnvRow } from "./EnvRow";
 
 export function ProductCard({ product }: { product: Product }) {
@@ -12,16 +13,14 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <motion.div className="relative w-full" variants={cardVariants}>
       {/* Card glow halo */}
-      <div
-        className={`absolute -inset-2 rounded-3xl bg-gradient-to-br ${product.gradient} opacity-20 blur-2xl pointer-events-none`}
-      />
+      <div className={`${CARD_GLOW} ${product.gradient}`} />
 
       {/* Card surface */}
-      <div className="relative rounded-2xl border border-white/10 bg-[#13131f]/80 backdrop-blur-md overflow-hidden">
+      <div className={CARD_SURFACE}>
         {/* Header */}
         <button
           onClick={() => setIsOpen((o) => !o)}
-          className="flex items-center justify-between w-full px-6 pt-6 pb-4 text-left focus:outline-none"
+          className="flex items-center justify-between w-full px-card pt-6 pb-4 text-left focus:outline-none"
         >
           <div className="flex items-center gap-3 min-w-0">
             <div className={`flex items-center justify-center w-11 h-11 rounded-xl flex-shrink-0 bg-gradient-to-br ${product.gradient} shadow-md`}>

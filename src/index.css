@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  /* Horizontal padding inside product cards (header + rows).
+     Change here to adjust every card's inner gutter at once. */
+  --spacing-card: 1.5rem;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
