@@ -10,6 +10,7 @@ export const config = {
 // Company VPN egress IP(s). Add more entries to widen access.
 const ALLOWED_IPS = new Set([
   "93.157.86.134",
+  "212.68.132.218",
 ]);
 
 export default function middleware(request: Request) {
