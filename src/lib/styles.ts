@@ -10,6 +10,5 @@
 export const CARD_SURFACE =
   "relative rounded-2xl border border-white/10 bg-[#13131f]/80 backdrop-blur-md overflow-hidden";
 
-/** Soft colored glow behind a card. Combine with a `from-… via-… to-…` gradient. */
-export const CARD_GLOW =
-  "absolute -inset-2 rounded-3xl bg-gradient-to-br opacity-20 blur-2xl pointer-events-none";
+/** Per-card glow halo — disabled. Kept as an empty class so consumers don't break. */
+export const CARD_GLOW = "hidden";

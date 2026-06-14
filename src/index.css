@@ -9,4 +9,46 @@
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* ── Light-mode overrides ─────────────────────────────────────────────────
+   The components are written for the dark theme (hard-coded `bg-[#0b0b1a]`,
+   `text-white/…`, etc). When `[data-theme="light"]` is set on <html>, flip
+   the equivalent classes to their light counterparts here so the components
+   themselves stay untouched. */
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="light"] body {
+  background-color: #f7f7f8;
+  color: #0a0a0c;
+}
+
+/* Page background */
+:root[data-theme="light"] .bg-\[\#0b0b1a\] {
+  background-color: #f7f7f8;
+}
+
+/* Card surface (defined in src/lib/styles.ts) */
+:root[data-theme="light"] .bg-\[\#13131f\]\/80 {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* Text scale */
+:root[data-theme="light"] .text-white         { color: #0a0a0c; }
+:root[data-theme="light"] .text-white\/70     { color: rgba(10, 10, 12, 0.82); }
+:root[data-theme="light"] .text-white\/40     { color: rgba(10, 10, 12, 0.55); }
+:root[data-theme="light"] .text-white\/20     { color: rgba(10, 10, 12, 0.32); }
+
+/* Borders */
+:root[data-theme="light"] .border-white\/10        { border-color: rgba(10, 10, 12, 0.1); }
+:root[data-theme="light"] .border-white\/\[0\.06\] { border-color: rgba(10, 10, 12, 0.08); }
+
+/* Hover backgrounds used inside LinkButton */
+:root[data-theme="light"] .hover\:bg-white\/10:hover {
+  background-color: rgba(10, 10, 12, 0.06);
+}
+
