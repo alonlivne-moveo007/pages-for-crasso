@@ -6,7 +6,7 @@ export function EnvRow({ env }: { env: Environment }) {
   const isStandalone = !env.strapi;
 
   return (
-    <div className="grid grid-cols-[minmax(120px,180px)_1fr_1fr] items-center gap-4 px-card py-4 border-t border-white/[0.06]">
+    <div className="grid grid-cols-[minmax(120px,180px)_1fr_1fr] items-center gap-4 px-card py-1 border-t border-white/[0.06]">
       <div className="flex items-center gap-2 min-w-0">
         <div className={`w-2 h-2 rounded-full flex-shrink-0 bg-gradient-to-br ${env.accent}`} />
         <span className="text-sm font-medium text-white/70 truncate">{env.name}</span>
