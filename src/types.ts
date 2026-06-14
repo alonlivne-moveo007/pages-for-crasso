@@ -1,12 +1,13 @@
 import type { LucideIcon } from "lucide-react";
 
-export type LinkVariant = "green" | "purple";
+export type LinkVariant = "green" | "purple" | "figma";
 
 export type Environment = {
   id: number;
   name: string;
   site?: { href: string; icon: LucideIcon };
   strapi?: { href: string; label?: string };
+  figma?: { href: string; label?: string };
   /** Tailwind gradient for the status dot, e.g. "from-emerald-500 to-teal-500" */
   accent: string;
   badge?: string;

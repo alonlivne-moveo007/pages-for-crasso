@@ -18,7 +18,6 @@ export const PRODUCTS: Product[] = [
         site: { href: "https://freesbe.com/", icon: Globe },
         strapi: { href: "https://admin.freesbe.com/admin" },
         accent: "from-emerald-500 to-teal-500",
-        badge: "Live",
       },
       {
         id: 2,
@@ -55,7 +54,6 @@ export const PRODUCTS: Product[] = [
         site: { href: "https://rental.freesbe.com/", icon: Globe },
         strapi: { href: "https://admin-rental.freesbe.com/admin/auth/login" },
         accent: "from-emerald-500 to-teal-500",
-        badge: "Live",
       },
       {
         id: 2,
@@ -85,7 +83,12 @@ export const PRODUCTS: Product[] = [
         site: { href: "https://prod.metro.co.il/", icon: Globe },
         strapi: { href: "http://185.70.250.61/admin" },
         accent: "from-emerald-500 to-teal-500",
-        badge: "Live",
+      },
+      {
+        id: 2,
+        name: "Figma",
+        figma: { href: "https://www.figma.com/design/fWw0Z6BbKSaQ0GtyWK29iT/Freesbe-Motors" },
+        accent: "from-amber-500 to-orange-500",
       },
     ],
   },
@@ -97,30 +100,24 @@ export const PRODUCTS: Product[] = [
     environments: [
       {
         id: 1,
-        name: "Careers",
-        site: { href: "https://careers.freesbe.com/", icon: Briefcase },
-        accent: "from-pink-500 to-rose-500",
-      },
-      {
-        id: 2,
         name: "Service",
         site: { href: "https://service.freesbe.com/", icon: Wrench },
         accent: "from-cyan-500 to-sky-500",
       },
       {
-        id: 3,
+        id: 2,
         name: "Car Fleet",
         site: { href: "https://freesbe.com/car-fleet", icon: Car },
         accent: "from-indigo-500 to-blue-500",
       },
       {
-        id: 4,
+        id: 3,
         name: "Accessories",
         site: { href: "https://accessories.freesbe.com/", icon: ShoppingBag },
         accent: "from-fuchsia-500 to-pink-500",
       },
       {
-        id: 5,
+        id: 4,
         name: "Accessories New",
         site: { href: "https://accessories-new.freesbe.com/", icon: ShoppingBag },
         accent: "from-purple-500 to-fuchsia-500",
@@ -128,29 +125,51 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
+    id: "careers",
+    name: "Careers",
+    gradient: "from-pink-500 via-rose-500 to-red-500",
+    icon: Briefcase,
+    environments: [
+      {
+        id: 1,
+        name: "Production",
+        site: { href: "https://careers.freesbe.com/", icon: Briefcase },
+        strapi: { href: "https://careers-admin.freesbe.com/admin" },
+        accent: "from-emerald-500 to-teal-500",
+      },
+      {
+        id: 2,
+        name: "Dev",
+        site: { href: "https://dev-career.freesbe.com/jobs", icon: Code2 },
+        strapi: { href: "https://dev-career.freesbe.com/api/admin" },
+        accent: "from-violet-500 to-purple-500",
+      },
+      {
+        id: 3,
+        name: "Figma",
+        figma: { href: "https://figma.com/design/prHKTjS1pdxiAurguoxis3/Careers" },
+        accent: "from-amber-500 to-orange-500",
+      },
+    ],
+  },
+  {
     id: "app",
-    name: "App",
+    name: "App-Support",
     gradient: "from-green-500 via-emerald-500 to-teal-500",
     icon: Smartphone,
     environments: [
       {
         id: 1,
         name: "Production",
+        site: { href: "https://app-support.freesbe.com/", icon: LifeBuoy },
         strapi: { href: "https://app.freesbe.com/admin" },
         accent: "from-emerald-500 to-teal-500",
-        badge: "Live",
       },
       {
         id: 2,
         name: "Dev",
         strapi: { href: "https://app-dev.freesbe.com/admin" },
         accent: "from-sky-500 to-indigo-500",
-      },
-      {
-        id: 3,
-        name: "Support",
-        site: { href: "https://app-support.freesbe.com/", icon: LifeBuoy },
-        accent: "from-amber-500 to-orange-500",
       },
     ],
   },

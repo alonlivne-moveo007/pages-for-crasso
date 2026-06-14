@@ -1,10 +1,11 @@
-import { Code2 } from "lucide-react";
+import { Code2, PenTool } from "lucide-react";
 import type { Environment } from "../types";
 import { LinkButton } from "./LinkButton";
 
 export function EnvRow({ env }: { env: Environment }) {
   // A row with only one link lets that button span both columns.
-  const single = !env.site !== !env.strapi;
+  const linkCount = [env.site, env.strapi, env.figma].filter(Boolean).length;
+  const single = linkCount === 1;
 
   return (
     <div className="grid grid-cols-[minmax(120px,180px)_1fr_1fr] items-center gap-4 px-card py-1 border-t border-white/[0.06]">
@@ -34,6 +35,16 @@ export function EnvRow({ env }: { env: Environment }) {
           icon={Code2}
           label={env.strapi.label ?? "Strapi"}
           variant="purple"
+          className={single ? "col-span-2" : ""}
+        />
+      )}
+
+      {env.figma && (
+        <LinkButton
+          href={env.figma.href}
+          icon={PenTool}
+          label={env.figma.label ?? "Figma"}
+          variant="figma"
           className={single ? "col-span-2" : ""}
         />
       )}
