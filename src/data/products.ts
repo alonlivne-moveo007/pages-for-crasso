@@ -183,7 +183,7 @@ export const PRODUCTS: Product[] = [
       {
         id: 1,
         name: "Used Cars – Prod",
-        site: { href: "https://accessories.freesbe.com/", icon: ShoppingBag },
+        site: { href: "https://accessories.freesbe.com/", icon: Globe },
         accent: "from-emerald-500 to-teal-500",
       },
       {
@@ -195,7 +195,7 @@ export const PRODUCTS: Product[] = [
       {
         id: 3,
         name: "New Cars – Prod",
-        site: { href: "https://accessories-new.freesbe.com/", icon: ShoppingBag },
+        site: { href: "https://accessories-new.freesbe.com/", icon: Globe },
         accent: "from-purple-500 to-fuchsia-500",
       },
     ],
@@ -209,7 +209,7 @@ export const PRODUCTS: Product[] = [
       {
         id: 1,
         name: "Production",
-        site: { href: "https://careers.freesbe.com/", icon: Briefcase },
+        site: { href: "https://careers.freesbe.com/", icon: Globe },
         strapi: { href: "https://careers-admin.freesbe.com/admin" },
         accent: "from-emerald-500 to-teal-500",
       },
