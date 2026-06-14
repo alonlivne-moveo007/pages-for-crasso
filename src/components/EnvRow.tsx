@@ -3,7 +3,8 @@ import type { Environment } from "../types";
 import { LinkButton } from "./LinkButton";
 
 export function EnvRow({ env }: { env: Environment }) {
-  const isStandalone = !env.strapi;
+  // A row with only one link lets that button span both columns.
+  const single = !env.site !== !env.strapi;
 
   return (
     <div className="grid grid-cols-[minmax(120px,180px)_1fr_1fr] items-center gap-4 px-card py-1 border-t border-white/[0.06]">
@@ -17,13 +18,15 @@ export function EnvRow({ env }: { env: Environment }) {
         )}
       </div>
 
-      <LinkButton
-        href={env.site.href}
-        icon={env.site.icon}
-        label={isStandalone ? env.name : "Website"}
-        variant="green"
-        className={isStandalone ? "col-span-2" : ""}
-      />
+      {env.site && (
+        <LinkButton
+          href={env.site.href}
+          icon={env.site.icon}
+          label={single ? env.name : "Website"}
+          variant="green"
+          className={single ? "col-span-2" : ""}
+        />
+      )}
 
       {env.strapi && (
         <LinkButton
@@ -31,6 +34,7 @@ export function EnvRow({ env }: { env: Environment }) {
           icon={Code2}
           label={env.strapi.label ?? "Strapi"}
           variant="purple"
+          className={single ? "col-span-2" : ""}
         />
       )}
     </div>

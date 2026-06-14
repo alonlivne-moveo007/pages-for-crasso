@@ -1,5 +1,5 @@
 import {
-  Globe, Code2, Car, Bike, Layers, AppWindow,
+  Globe, Code2, Car, Bike, Layers, AppWindow, Smartphone, LifeBuoy,
   Briefcase, Wrench, Bug, BarChart2, Tag,
 } from "lucide-react";
 import type { Product } from "../types";
@@ -106,6 +106,33 @@ export const PRODUCTS: Product[] = [
         name: "Service",
         site: { href: "https://service.freesbe.com/", icon: Wrench },
         accent: "from-cyan-500 to-sky-500",
+      },
+    ],
+  },
+  {
+    id: "app",
+    name: "App",
+    gradient: "from-green-500 via-emerald-500 to-teal-500",
+    icon: Smartphone,
+    environments: [
+      {
+        id: 1,
+        name: "Production",
+        strapi: { href: "https://app.freesbe.com/admin" },
+        accent: "from-emerald-500 to-teal-500",
+        badge: "Live",
+      },
+      {
+        id: 2,
+        name: "Dev",
+        strapi: { href: "https://app-dev.freesbe.com/admin" },
+        accent: "from-sky-500 to-indigo-500",
+      },
+      {
+        id: 3,
+        name: "Support",
+        site: { href: "https://app-support.freesbe.com/", icon: LifeBuoy },
+        accent: "from-amber-500 to-orange-500",
       },
     ],
   },
