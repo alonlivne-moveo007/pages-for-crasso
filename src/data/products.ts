@@ -1,6 +1,6 @@
 import {
   Globe, Code2, Car, Bike, Layers, Smartphone,
-  Briefcase, Wrench, Bug, BarChart2, Tag, ShoppingBag, Image, Eye, Cloud,
+  Briefcase, Wrench, Bug, BarChart2, Tag, ShoppingBag, Image, Eye, Cloud, Snowflake,
 } from "lucide-react";
 import type { Product } from "../types";
 import freesbeLogo from "../assets/freesbe.svg";
@@ -80,7 +80,7 @@ export const PRODUCTS: Product[] = [
         id: 3,
         name: "Dev",
         site: { href: "https://dev-rental.freesbe.com/", icon: Code2 },
-        strapi: { href: "https://dev-rental.freesbe.com/api/admin/auth/login" },
+        strapi: { href: "https://dev-rental.freesbe.com/admin/auth/login" },
         accent: "from-sky-500 to-indigo-500",
       },
     ],
@@ -176,6 +176,13 @@ export const PRODUCTS: Product[] = [
       },
       {
         id: 2,
+        name: "Dev",
+        site: { href: "https://185.70.251.112/motorcycles", icon: Code2 },
+        strapi: { href: "http://185.70.251.112:1337/admin" },
+        accent: "from-sky-500 to-indigo-500",
+      },
+      {
+        id: 3,
         name: "Figma",
         figma: { href: "https://www.figma.com/design/fWw0Z6BbKSaQ0GtyWK29iT/Freesbe-Motors" },
         accent: "from-amber-500 to-orange-500",
@@ -304,6 +311,12 @@ export const PRODUCTS: Product[] = [
         name: "Salesforce",
         site: { href: "https://carasso.my.salesforce.com", icon: Cloud, iconUrl: salesforceLogo },
         accent: "from-blue-500 to-sky-500",
+      },
+      {
+        id: 7,
+        name: "Snowflake",
+        site: { href: "https://app.snowflake.com/a6103199600571/freesbe/#/homepage", icon: Snowflake },
+        accent: "from-cyan-500 to-sky-500",
       },
     ],
   },
