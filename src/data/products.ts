@@ -83,6 +83,12 @@ export const PRODUCTS: Product[] = [
         strapi: { href: "https://dev-rental.freesbe.com/admin/auth/login" },
         accent: "from-sky-500 to-indigo-500",
       },
+      {
+        id: 4,
+        name: "Figma",
+        figma: { href: "https://www.figma.com/design/3vL6Q0eiJIj3yrF87GtFDP/Rental-website" },
+        accent: "from-amber-500 to-orange-500",
+      },
     ],
   },
   {
