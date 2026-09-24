@@ -1,4 +1,4 @@
-import { Code2, PenTool } from "lucide-react";
+import { Code2, PenTool, Boxes } from "lucide-react";
 import type { Environment } from "../types";
 import { LinkButton } from "./LinkButton";
 import strapiLogo from "../assets/strapi.svg";
@@ -6,7 +6,7 @@ import figmaLogo from "../assets/figma.svg";
 
 export function EnvRow({ env }: { env: Environment }) {
   // A row with only one link lets that button span both columns.
-  const linkCount = [env.site, env.strapi, env.figma].filter(Boolean).length;
+  const linkCount = [env.site, env.strapi, env.figma, env.medusa].filter(Boolean).length;
   const single = linkCount === 1;
 
   return (
@@ -39,6 +39,16 @@ export function EnvRow({ env }: { env: Environment }) {
           iconUrl={strapiLogo}
           label={env.strapi.label ?? `Strapi – ${env.name}`}
           variant="purple"
+          className={single ? "col-span-2" : ""}
+        />
+      )}
+
+      {env.medusa && (
+        <LinkButton
+          href={env.medusa.href}
+          icon={Boxes}
+          label={env.medusa.label ?? `Medusa – ${env.name}`}
+          variant="medusa"
           className={single ? "col-span-2" : ""}
         />
       )}
