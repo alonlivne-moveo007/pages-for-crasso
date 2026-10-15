@@ -1,6 +1,6 @@
 import {
   Globe, Code2, Car, Bike, Layers, Smartphone,
-  Briefcase, Wrench, Bug, BarChart2, Tag, ShoppingBag, Image, Eye, Cloud, Snowflake,
+  Briefcase, Wrench, Bug, BarChart2, Tag, ShoppingBag, Image, Eye, Cloud, Snowflake, Zap,
 } from "lucide-react";
 import type { Product } from "../types";
 import freesbeLogo from "../assets/freesbe.svg";
@@ -121,6 +121,29 @@ export const PRODUCTS: Product[] = [
       },
     ],
     column: 1,
+  },
+  {
+    id: "gnergy",
+    name: "Gnergy",
+    gradient: "from-yellow-500 via-amber-500 to-lime-500",
+    icon: Zap,
+    environments: [
+      {
+        id: 1,
+        name: "Production",
+        site: { href: "https://energy.freesbe.com/", icon: Globe },
+        strapi: { href: "https://energy-cm.freesbe.com/admin" },
+        accent: "from-emerald-500 to-teal-500",
+      },
+      {
+        id: 2,
+        name: "Dev",
+        site: { href: "https://dev-energy.freesbe.com", icon: Code2 },
+        strapi: { href: "https://dev-energy.freesbe.com/admin" },
+        accent: "from-sky-500 to-indigo-500",
+      },
+    ],
+    column: 2,
   },
   {
     id: "metro-accessories",
