@@ -11,6 +11,7 @@ export const config = {
 const ALLOWED_IPS = new Set([
   "93.157.86.134",
   "212.68.132.218",
+  "93.157.85.78",
 ]);
 
 export default function middleware(request: Request) {
