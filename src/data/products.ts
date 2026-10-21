@@ -108,13 +108,20 @@ export const PRODUCTS: Product[] = [
       },
       {
         id: 2,
+        name: "Stage",
+        site: { href: "https://185.70.251.76/motorcycles", icon: Code2 },
+        strapi: { href: "http://185.70.251.76:1337/admin" },
+        accent: "from-amber-500 to-orange-500",
+      },
+      {
+        id: 3,
         name: "Dev",
         site: { href: "https://185.70.251.112/motorcycles", icon: Code2 },
         strapi: { href: "http://185.70.251.112:1337/admin" },
         accent: "from-sky-500 to-indigo-500",
       },
       {
-        id: 3,
+        id: 4,
         name: "Figma",
         figma: { href: "https://www.figma.com/design/fWw0Z6BbKSaQ0GtyWK29iT/Freesbe-Motors" },
         accent: "from-amber-500 to-orange-500",
