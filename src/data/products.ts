@@ -123,7 +123,7 @@ export const PRODUCTS: Product[] = [
       {
         id: 4,
         name: "Figma",
-        figma: { href: "https://www.figma.com/design/fWw0Z6BbKSaQ0GtyWK29iT/Freesbe-Motors" },
+        figma: { href: "https://www.figma.com/design/fWw0Z6BbKSaQ0GtyWK29iT/Freesbe-Motors?node-id=125-23751&p=f&m=dev" },
         accent: "from-amber-500 to-orange-500",
       },
     ],
