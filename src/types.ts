@@ -5,7 +5,7 @@ export type LinkVariant = "green" | "purple" | "figma" | "medusa";
 export type Environment = {
   id: number;
   name: string;
-  site?: { href: string; icon: LucideIcon; iconUrl?: string };
+  site?: { href: string; icon: LucideIcon; iconUrl?: string; label?: string };
   strapi?: { href: string; label?: string };
   figma?: { href: string; label?: string };
   medusa?: { href: string; label?: string };

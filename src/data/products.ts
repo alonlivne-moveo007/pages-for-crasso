@@ -1,6 +1,6 @@
 import {
   Globe, Code2, Car, Bike, Layers, Smartphone,
-  Briefcase, Wrench, Bug, BarChart2, Tag, ShoppingBag, Image, Eye, Cloud, Snowflake, Zap,
+  Briefcase, Wrench, Bug, BarChart2, Tag, ShoppingBag, Image, Eye, Cloud, Snowflake, Zap, Settings, Store, Apple,
 } from "lucide-react";
 import type { Product } from "../types";
 import freesbeLogo from "../assets/freesbe.svg";
@@ -52,6 +52,47 @@ export const PRODUCTS: Product[] = [
         id: 5,
         name: "Figma",
         figma: { href: "https://www.figma.com/design/JiDVQ5zJKCHWBaSKeaEmP6/Car-pages" },
+        accent: "from-amber-500 to-orange-500",
+      },
+    ],
+    column: 1,
+  },
+  {
+    id: "app",
+    name: "Freesbe App",
+    gradient: "from-green-500 via-emerald-500 to-teal-500",
+    icon: Smartphone,
+    environments: [
+      {
+        id: 1,
+        name: "Production",
+        site: { href: "https://app-cms.freesbe.com/admin", icon: Settings, label: "Admin Panel – Prod" },
+        strapi: { href: "https://app.freesbe.com/admin", label: "Strapi – Prod" },
+        accent: "from-emerald-500 to-teal-500",
+      },
+      {
+        id: 2,
+        name: "Dev",
+        site: { href: "https://app-dev.freesbe.com/admin", icon: Settings, label: "Admin Panel – Dev" },
+        strapi: { href: "https://cms-dev.freesbe.com/admin", label: "Strapi – Dev" },
+        accent: "from-sky-500 to-indigo-500",
+      },
+      {
+        id: 3,
+        name: "Google Play",
+        site: { href: "https://play.google.com/console/u/0/developers/6566589044834748796/app/4976208513475715482/app-dashboard", icon: Store, label: "Google Play Console" },
+        accent: "from-lime-500 to-green-500",
+      },
+      {
+        id: 4,
+        name: "App Store",
+        site: { href: "https://appstoreconnect.apple.com/login", icon: Apple, label: "App Store Connect" },
+        accent: "from-slate-400 to-zinc-500",
+      },
+      {
+        id: 5,
+        name: "Figma",
+        figma: { href: "https://www.figma.com/design/yz79ce7YTyhc1w3knOvDdD/App?node-id=8287-36823&t=EkwD6Gj0OsgkURAZ-0" },
         accent: "from-amber-500 to-orange-500",
       },
     ],
@@ -358,34 +399,6 @@ export const PRODUCTS: Product[] = [
       },
     ],
     column: 1,
-  },
-  {
-    id: "app",
-    name: "App-Support",
-    gradient: "from-green-500 via-emerald-500 to-teal-500",
-    icon: Smartphone,
-    environments: [
-      {
-        id: 1,
-        name: "Production",
-        site: { href: "https://app-support.freesbe.com/", icon: Globe },
-        strapi: { href: "https://app.freesbe.com/admin" },
-        accent: "from-emerald-500 to-teal-500",
-      },
-      {
-        id: 2,
-        name: "Dev",
-        strapi: { href: "https://app-dev.freesbe.com/admin" },
-        accent: "from-sky-500 to-indigo-500",
-      },
-      {
-        id: 3,
-        name: "Figma",
-        figma: { href: "https://www.figma.com/design/yz79ce7YTyhc1w3knOvDdD/App?node-id=8287-36823&t=EkwD6Gj0OsgkURAZ-0" },
-        accent: "from-amber-500 to-orange-500",
-      },
-    ],
-    column: 2,
   },
 ];
 // ────────────────────────────────────────────────────────────────────────────
