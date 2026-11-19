@@ -356,6 +356,28 @@ export const PRODUCTS: Product[] = [
     column: 2,
   },
   {
+    id: "store",
+    name: "Store",
+    gradient: "from-orange-500 via-rose-500 to-pink-500",
+    icon: Store,
+    environments: [
+      {
+        id: 1,
+        name: "Dev",
+        site: { href: "https://store-dev.freesbe.com/", icon: Code2 },
+        strapi: { href: "https://store-dev-cm.freesbe.com/admin" },
+        accent: "from-sky-500 to-indigo-500",
+      },
+      {
+        id: 2,
+        name: "Dev – Medusa",
+        medusa: { href: "https://store-admin.freesbe.com/app", label: "Medusa Admin – Dev" },
+        accent: "from-sky-500 to-indigo-500",
+      },
+    ],
+    column: 2,
+  },
+  {
     id: "service",
     name: "Service",
     gradient: "from-cyan-500 via-sky-500 to-blue-500",
