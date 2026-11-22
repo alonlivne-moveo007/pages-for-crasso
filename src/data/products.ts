@@ -1,6 +1,6 @@
 import {
   Globe, Code2, Car, Bike, Layers, Smartphone,
-  Briefcase, Wrench, Bug, BarChart2, Tag, ShoppingBag, Image, Eye, Cloud, Snowflake, Zap, Settings, Store, Apple,
+  Briefcase, Wrench, Bug, BarChart2, Tag, ShoppingBag, Image, Eye, Cloud, Snowflake, Zap, Settings, Store, Apple, Landmark,
 } from "lucide-react";
 import type { Product } from "../types";
 import freesbeLogo from "../assets/freesbe.svg";
@@ -421,6 +421,29 @@ export const PRODUCTS: Product[] = [
       },
     ],
     column: 1,
+  },
+  {
+    id: "mortgages",
+    name: "Mortgages",
+    gradient: "from-emerald-500 via-green-500 to-lime-500",
+    icon: Landmark,
+    environments: [
+      {
+        id: 1,
+        name: "Production",
+        site: { href: "https://mortgages.freesbe.com/", icon: Globe },
+        strapi: { href: "https://mortgages-cm.freesbe.com/admin" },
+        accent: "from-emerald-500 to-teal-500",
+      },
+      {
+        id: 2,
+        name: "Stage",
+        site: { href: "https://mortgages-dev.freesbe.com/", icon: Code2 },
+        strapi: { href: "https://mortgages-dev.freesbe.com/admin" },
+        accent: "from-amber-500 to-orange-500",
+      },
+    ],
+    column: 2,
   },
 ];
 // ────────────────────────────────────────────────────────────────────────────
