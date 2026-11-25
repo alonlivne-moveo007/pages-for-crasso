@@ -108,7 +108,7 @@ export const PRODUCTS: Product[] = [
         id: 1,
         name: "Production",
         site: { href: "https://rental.freesbe.com/", icon: Globe },
-        strapi: { href: "https://admin-rental.freesbe.com/admin/auth/login" },
+        strapi: { href: "https://admin-rental.freesbe.com/monorepo/admin" },
         accent: "from-emerald-500 to-teal-500",
       },
       {
@@ -121,8 +121,8 @@ export const PRODUCTS: Product[] = [
       {
         id: 3,
         name: "Dev",
-        site: { href: "https://dev-rental.freesbe.com/", icon: Code2 },
-        strapi: { href: "https://dev-rental.freesbe.com/admin/auth/login" },
+        site: { href: "https://dev-rental.freesbe.com/monorepo-client/", icon: Code2 },
+        strapi: { href: "https://dev-rental.freesbe.com/monorepo/admin/auth/login" },
         accent: "from-sky-500 to-indigo-500",
       },
       {
